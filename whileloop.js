@@ -1,7 +1,8 @@
 const prompt = require('prompt-sync')();
-let n = prompt('Depart : ');
-let indx = 0 ; 
-while (n>=indx) {
-    console.log(n--)
-    
+let n = +prompt('Somme des nombres ');
+let sum = 0; 
+for(let i = 1; i <= n; i++) {
+     sum = sum + i;
 }
+ console.log(sum)
+ 
