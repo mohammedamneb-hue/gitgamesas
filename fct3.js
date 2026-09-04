@@ -1,6 +1,6 @@
-function genererEmail(prenom, nom){
-let n =    nom.toLowerCase()
-let p =    prenom.toLowerCase()
-console.log (p + "." + n  + "@entreprise.com")
+function saluerClient(Nom , titre){
+    return (`Bonjour Client ${Nom} ${titre}`)
 }
-genererEmail("med","amine") 
+
+let a = saluerClient("amone","yash")
+console.log(a);
