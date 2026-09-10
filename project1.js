@@ -1,5 +1,5 @@
 let tickets = []
-let Id = 1 ;
+let Id = 1;
 const trips = [
     {
         id: 1,
@@ -205,16 +205,18 @@ do {
 
         case 2:
 
-            console.log(AcheterUnTicket(trips))
+            (AcheterUnTicket(trips))
             // console.log("2. Acheter un ticket")
             break;
 
         case 3:
-            console.log("3. Afficher les tickets")
+            afficherTickets()
+            // console.log("3. Afficher les tickets")
             break;
 
         case 4:
-            console.log("4. Annuler un ticket")
+            annulerUnTicket();
+            // console.log("4. Annuler un ticket")
             break;
         case 5:
             console.log("5. Rechercher un ticket")
@@ -235,7 +237,10 @@ do {
 } while (n != 0)
 
 
-function AfficherLesTrajets(trip) {
+
+
+
+function AfficherLesTrajets() {
     for (let i = 0; i < trips.length; i++) {
 
         console.log(
@@ -250,7 +255,7 @@ Places disponibles : ${trips[i].availableSeats}`)
 function AcheterUnTicket(buy) {
     const passager = prompt('Nom du passager :  ');
     const trajetId = +prompt('Identifiant :  ');
-   
+
     let Seatnumber = 1;
     for (let i = 0; i < buy.length; i++) {
         if (buy[i].id === trajetId) {
@@ -263,10 +268,11 @@ function AcheterUnTicket(buy) {
                     price: buy[i].price
 
                 }
-                
+
                 Id++;
                 buy[i].availableSeats--;
-                console.log(trips[Id-1].availableSeats)
+
+                console.log("Places disponibles", buy[i].availableSeats)
                 console.log("Ticket acheté avec succès.");
                 console.log("");
                 console.log("Ticket #" + ticket.id);
@@ -279,11 +285,40 @@ function AcheterUnTicket(buy) {
                 );
                 console.log("Place : " + ticket.Seatnumber);
                 console.log("Prix : " + ticket.price + " DH");
+                tickets[tickets.length] = ticket;
             }
 
             break;
         }
-        }
-        return tickets;
     }
-    
+    // return tickets;
+}
+
+function afficherTickets(
+
+
+
+
+) {
+
+    if (tickets.length === 0) {
+        console.log("Aucun ticket enregistré.");
+        return;
+    }
+
+    console.log("=== TICKETS ===");
+
+    for (let i = 0; i < tickets.length; i++) {
+        let ticket = tickets[i]
+        console.log("Ticket #" + ticket.id);
+        console.log("Passager : " + ticket.passangername);
+        console.log("Trajet : " + ticket.tripId);
+        console.log("Place : " + ticket.Seatnumber);
+        console.log("Prix : " + ticket.price + " DH");
+    }
+
+}
+
+
+
+
