@@ -253,3 +253,44 @@ Places disponibles : ${trips[i].availableSeats}`)
     }
 }
 
+function AcheterUnTicket(buy) {
+    const passager = prompt('Nom du passager :  ');
+    const trajetId = +prompt('Identifiant :  ');
+
+    let Seatnumber = 1;
+    for (let i = 0; i < buy.length; i++) {
+        if (buy[i].id === trajetId) {
+            if (buy[i].availableSeats > 0) {
+                const ticket = {
+                    id: Id,
+                    passangername: passager,
+                    tripId: trajetId,
+                    Seatnumber: Seatnumber,
+                    price: buy[i].price
+
+                }
+
+                Id++;
+                buy[i].availableSeats--;
+
+                console.log("Places disponibles", buy[i].availableSeats)
+                console.log("Ticket acheté avec succès.");
+                console.log("");
+                console.log("Ticket #" + ticket.id);
+                console.log("Passager : " + ticket.passangername);
+                console.log(
+                    "Trajet : " +
+                    buy[i].departure +
+                    " → " +
+                    buy[i].destination
+                );
+                console.log("Place : " + ticket.Seatnumber);
+                console.log("Prix : " + ticket.price + " DH");
+                tickets[tickets.length] = ticket;
+            }
+
+            break;
+        }
+    }
+    // return tickets;
+}
