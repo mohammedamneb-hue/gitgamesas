@@ -3,7 +3,7 @@ let student = {firstName : "Amine" ,
     age : 100 ,
     city : "youssoufia",
     school : "maison" };
-    console.log(student.firstName)
+    console.log("prenom:"+student.firstName)
     console.log(student.lastName);
     console.log(student.age);
     console.log(student.city);

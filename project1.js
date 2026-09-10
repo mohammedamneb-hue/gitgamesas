@@ -322,7 +322,34 @@ function afficherTickets(
 
 
 
+function annulerUnTicket() {
+    ID = prompt('tapez ID:  ');
+    for (let i = 0; i < tickets.length; i++) {
+        if (ID == tickets[i].id) {
+            tickets.splice(i, 1)
+            console.log("Ticket annulé avec succès")
+            return;
+        }
+
+
+
+    }
+}
+// annulerUnTicket();
+
+function RechercherUntTicket() {
+    const passager = prompt('tapez Nom:  ');
+    let ticketFound = []
+    for (let i = 0; i < tickets.length; i++) {
+        if (passager == tickets[i].passangername) {
             
-    
+        }
+
+    }
+}
+
+
+
+
 
 

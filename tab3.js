@@ -1,10 +1,11 @@
-const numbers = [15, 12, 8, 110, 44];
+const numbers = [10 , 20, 3, 40, 5]
 function trouverMax(tab){
-    let max = 0
-for(let i = 1 ; i<numbers.length; i++){
-    if (max<numbers[i])
-        max=numbers[i]
+    let i = 0;
+    let max = 0;
+    while (i < numbers.length){
+        if (numbers[i] > max)
+            max = numbers[i];
+        i = i + 1;
+    }
+    return max;
 }
-console.log(max)
-}
-trouverMax(numbers)

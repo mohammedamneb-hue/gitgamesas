@@ -10,8 +10,11 @@ let account = {owner : "amine",
   solde : 6000 , 
     type : "saving"
 }
-switch(n){
-case 1 :
+
+do {
+    
+    switch(n){
+        case 1 :
     
     console.log("1 → Afficher le solde: ")
     console.log(account.solde)
@@ -19,24 +22,28 @@ case 1 :
 
 case 2 : 
     console.log("2 → Déposer de l'argent: ")
-    prompt = require('prompt-sync')();
-n = +prompt('Déposer :  ');
+
+    n1 = +prompt('Déposer :  ');
  
-   account.solde += n
+   account.solde += n1
    console.log(account.solde)
-
-    break;
-case 3 :
-    console.log("3 → Retirer de l'argent: ")
-        prompt = require('prompt-sync')();
-n = +prompt('retirer :  ');
-
-      if (n>6000)
-        console.log("sold est insuffisant")
+   
+   break;
+   case 3 :
+       console.log("3 → Retirer de l'argent: ")
+        
+       n2 = +prompt('retirer :  ');
+       
+       if (n<6000)
+        console.log("sold est suffisant")
+    
     else 
-        console.log("sold suffisant")
+        console.log("sold est insuffisant")
+    
     break ;
+    
+    case 4 :
+        console.log("4 → Verifier le solde: ")
+    }
 
-case 4 :
-    console.log("4 → Verifier le solde: ")
-}
+    
