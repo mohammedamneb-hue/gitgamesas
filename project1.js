@@ -219,7 +219,8 @@ do {
             // console.log("4. Annuler un ticket")
             break;
         case 5:
-            console.log("5. Rechercher un ticket")
+            RechercherUntTicket
+            // console.log("5. Rechercher un ticket")
             break;
         case 6:
             console.log("6. Filtrer les trajets")
@@ -320,5 +321,8 @@ function afficherTickets(
 }
 
 
+
+            
+    
 
 
